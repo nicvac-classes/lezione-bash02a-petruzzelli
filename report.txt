@@ -144,3 +144,60 @@ bash: ../../sandbox/log_estratto.txt: No such file or directory
 bash: ../../sandbox/log_estratto.txt: No such file or directory
 @Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ cat ../../sandbox/log_estratto.txt
 cat: ../../sandbox/log_estratto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd esercizi/log
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep "ERROR" server.log
+2024-01-15 08:20:45 [ERROR] Connessione al database persa
+2024-01-15 08:20:46 [ERROR] Timeout nella riconnessione al database
+2024-01-15 08:45:10 [ERROR] File non trovato: /images/logo.png - 404
+2024-01-15 09:45:00 [ERROR] Impossibile inviare email di notifica
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep -c "WARNING" server.log
+4
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep "INFO" server.log > ../../sandbox/solo_info.txt
+bash: ../../sandbox/solo_info.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ cd esercizi/log
+bash: cd: esercizi/log: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep "FAILED" accessi.log
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep -c "SUCCESS" accessi.log
+0
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ 2026-03-01 mario SUCCESS
+2026-03-01 luca FAILED
+bash: 2026-03-01: command not found
+bash: 2026-03-01: command not found
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ awk '{print $2}' accessi.log | sort | uniq
+08:05:00
+08:10:30
+08:10:31
+08:15:00
+08:20:00
+08:25:00
+08:30:00
+08:35:00
+08:40:00
+08:45:00
+09:00:00
+09:15:00
+09:30:00
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ awk '{print $2}' accessi.log | sort -u
+08:05:00
+08:10:30
+08:10:31
+08:15:00
+08:20:00
+08:25:00
+08:30:00
+08:35:00
+08:40:00
+08:45:00
+09:00:00
+09:15:00
+09:30:00
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ ls esercizi/archivio/*.jpg 2>/dev/null | wc -l
+0
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep "livello" esercizi/documenti/appunti_reti.txt
+grep: esercizi/documenti/appunti_reti.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep -i "livello" esercizi/documenti/appunti_reti.txt
+grep: esercizi/documenti/appunti_reti.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep -c "database" esercizi/log/server.log
+grep: esercizi/log/server.log: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ grep -ic "database" esercizi/log/server.log
+grep: esercizi/log/server.log: No such file or directory
