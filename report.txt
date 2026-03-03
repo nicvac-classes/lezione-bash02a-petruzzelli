@@ -1,0 +1,146 @@
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd esercizi/documenti
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ cat appunti_reti.txt
+Lezione 1 - Modello OSI
+
+Il modello OSI (Open Systems Interconnection) è composto da 7 livelli:
+
+1. Fisico - trasmissione dei bit sul mezzo fisico
+2. Data Link - gestione dei frame e accesso al mezzo
+3. Rete - instradamento dei pacchetti (IP)
+4. Trasporto - comunicazione end-to-end (TCP, UDP)
+5. Sessione - gestione delle sessioni di comunicazione
+6. Presentazione - codifica e crittografia dei dati
+7. Applicazione - interfaccia con l'utente (HTTP, FTP, SMTP)
+
+Il modello TCP/IP semplifica questi livelli in 4:
+- Accesso alla rete (livelli 1-2)
+- Internet (livello 3)
+- Trasporto (livello 4)
+- Applicazione (livelli 5-7)
+
+Ogni livello comunica solo con il livello adiacente.
+Il principio di incapsulamento prevede che ogni livello aggiunga un header ai dati.
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ head -n 3 appunti_sicurezza.txt
+Sicurezza Informatica - Concetti Base
+
+La triade CIA:
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ tail -n 5 todo.txt
+
+Scadenze:
+- Backend: 15 marzo
+- Frontend: 30 marzo
+- Consegna finale: 15 aprile
+2024-01-15 08:05:00 mario.rossi login successo 192.168.1.10
+2024-01-15 08:10:30 admin login fallito 192.168.1.100
+2024-01-15 08:10:31 admin login fallito 192.168.1.100
+2024-01-15 08:15:00 admin login successo 192.168.1.100
+2024-01-15 08:20:00 luca.bianchi login successo 192.168.1.20
+2024-01-15 08:25:00 anna.verdi login successo 192.168.1.30
+2024-01-15 08:30:00 mario.rossi logout 192.168.1.10
+2024-01-15 08:35:00 guest login fallito 192.168.1.50
+2024-01-15 08:40:00 luca.bianchi logout 192.168.1.20
+2024-01-15 08:45:00 sara.neri login successo 192.168.1.40
+2024-01-15 09:00:00 admin logout 192.168.1.100
+2024-01-15 09:15:00 anna.verdi logout 192.168.1.30
+2024-01-15 09:30:00 sara.neri logout 192.168.1.40
+(END)
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd ../documenti
+bash: cd: ../documenti: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cp appunti_reti.txt appunti_reti_backup.txt
+cp: cannot stat 'appunti_reti.txt': No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cp todo.txt ../backup/
+cp: cannot stat 'todo.txt': No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls
+ls ../backup/
+README.md  esercizi  report.txt  setup.sh
+ls: cannot access '../backup/': No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls
+README.md  esercizi  report.txt  setup.sh
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls ../backup/
+ls: cannot access '../backup/': No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd esercizi/documenti
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ mv todo.txt attivita.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ ls
+appunti_database.txt  appunti_reti.txt  appunti_sicurezza.txt  attivita.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ mv attivita.txt ../archivio/
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ ls
+appunti_database.txt  appunti_reti.txt  appunti_sicurezza.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ ls ../archivio/
+attivita.txt            documento_gennaio.pdf  foto_roma_2023.jpg  readme.md
+budget_2023.xlsx        documento_marzo.pdf    foto_roma_2024.jpg  relazione_finale.docx
+budget_2024.xlsx        foto_milano_2023.jpg   note.txt            relazione_intermedia.docx
+documento_febbraio.pdf  foto_napoli_2024.jpg   presentazione.pptx
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/documenti (main) $ cd ../archivio
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ rm note.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ rm -i readme.md
+rm: remove regular empty file 'readme.md'? ls
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ mkdir ../temp
+touch ../temp/a.txt ../temp/b.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ rm -r ../temp
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls ..
+archivio  backup  documenti  log  progetti  sandbo
+cat ../sandbox/log_estratto.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls .jpg
+ls: cannot access '.jpg': No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls *.jpg
+ls: cannot access '*.jpg': No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd esercizi/archivio
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls *.jpg
+foto_milano_2023.jpg  foto_napoli_2024.jpg  foto_roma_2023.jpg  foto_roma_2024.jpg
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls *.jpg *.JPG
+ls: cannot access '*.JPG': No such file or directory
+ foto_milano_2023.jpg   foto_napoli_2024.jpg   foto_roma_2023.jpg   foto_roma_2024.jpg
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls *.pdf
+documento_febbraio.pdf  documento_gennaio.pdf  documento_marzo.pdf
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls *.pdf *.PDF
+ls: cannot access '*.PDF': No such file or directory
+ documento_febbraio.pdf   documento_gennaio.pdf   documento_marzo.pdf
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls *2024*
+budget_2024.xlsx  foto_napoli_2024.jpg  foto_roma_2024.jpg
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ cp *.jpg ../backup/
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls ../backup/
+foto_milano_2023.jpg  foto_napoli_2024.jpg  foto_roma_2023.jpg  foto_roma_2024.jpg
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls relazione*
+relazione_finale.docx  relazione_intermedia.docx
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls *.xlsx *.docx
+budget_2023.xlsx  budget_2024.xlsx  relazione_finale.docx  relazione_intermedia.docx
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls foto_roma*
+foto_roma_2023.jpg  foto_roma_2024.jpg
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls budget_202[34].xlsx
+budget_2023.xlsx  budget_2024.xlsx
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/archivio (main) $ ls documento_???????.pdf
+documento_gennaio.pdf
+
+🚀 Sei pronto per iniziare gli esercizi! Apri il README.md
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd /workspaces/*Lezione_Bash02*/esercizi/sandbox
+bash: cd: /workspaces/*Lezione_Bash02*/esercizi/sandbox: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ echo "mela" > frutti.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ echo "banana" >> frutti.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ echo "arancia" >> frutti.txt
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cat frutti.txt
+mela
+banana
+arancia
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd /workspaces/*Lezione_Bash02*/esercizi/archivio
+bash: cd: /workspaces/*Lezione_Bash02*/esercizi/archivio: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls *.jpg > ../sandbox/elenco_foto.txt
+bash: ../sandbox/elenco_foto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ ls *.pdf >> ../sandbox/elenco_foto.txt
+bash: ../sandbox/elenco_foto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cat ../sandbox/elenco_foto.txt
+cat: ../sandbox/elenco_foto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd /workspaces/*Lezione_Bash02*/esercizi/log
+bash: cd: /workspaces/*Lezione_Bash02*/esercizi/log: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ head -n 5 server.log > ../sandbox/log_estratto.txt
+bash: ../sandbox/log_estratto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ tail -n 3 server.log >> ../sandbox/log_estratto.txt
+bash: ../sandbox/log_estratto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cat ../sandbox/log_estratto.txt
+cat: ../sandbox/log_estratto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli (main) $ cd esercizi/log
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ head -n 5 server.log > ../../sandbox/log_estratto.txt
+bash: ../../sandbox/log_estratto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ tail -n 3 server.log >> ../../sandbox/log_estratto.txt
+bash: ../../sandbox/log_estratto.txt: No such file or directory
+@Simone725 ➜ /workspaces/lezione-bash02a-petruzzelli/esercizi/log (main) $ cat ../../sandbox/log_estratto.txt
+cat: ../../sandbox/log_estratto.txt: No such file or directory
